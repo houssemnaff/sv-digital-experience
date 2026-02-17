@@ -31,14 +31,18 @@ const Hero = () => {
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-primary/5 blur-[100px] animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 opacity-0 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-          <span className="text-xs font-medium tracking-widest uppercase text-primary">
-            Digital Marketing & Creative Studio — Tunisia
-          </span>
+
+        {/* Badge — moved just above the headline, centered */}
+        <div className="flex justify-center mb-4 opacity-0 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <div className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5">
+            <span className="text-xs font-medium tracking-widest uppercase text-primary">
+              Digital Marketing & Creative Studio — Tunisia
+            </span>
+          </div>
         </div>
 
-        {/* Enhanced headline with better gradient */}
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] tracking-tight mb-8 opacity-0 animate-fade-up" style={{ animationDelay: "0.25s" }}>
+        {/* Headline — reduced from 5xl→8xl to 3xl→6xl */}
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-8 opacity-0 animate-fade-up" style={{ animationDelay: "0.25s" }}>
           <span className="block mb-2">We Build Digital</span>
           <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
             Experiences That Convert
@@ -60,7 +64,7 @@ const Hero = () => {
             asChild
           >
             <a href="#contact">
-          Book a Consultation
+              Book a Consultation
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </a>
           </Button>
