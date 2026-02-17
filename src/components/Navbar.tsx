@@ -35,36 +35,44 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
             ? "bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-purple-500/5"
             : "bg-transparent"
-        }`}
+          }`}
       >
         {/* Top glow line */}
         <div
-          className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent transition-opacity duration-500 ${
-            scrolled ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"
+            }`}
         />
 
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-          {/* Logo */}
+
+
           <a href="#" className="group relative flex items-center gap-2">
             <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-white" />
+            <div className="relative flex items-center gap-1 md:gap-1">
+              <div className="w-12 h-12 md:w-20 md:h-16 rounded-lg bg-gradient-to-br from-black-500 to-blue-500 flex items-center justify-center shrink-0 overflow-hidden">
+                <img
+                  src="/svagency-removebg-preview.png"
+                  alt="SV Agency"
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    // fallback to svg if png missing
+                    const img = e.target as HTMLImageElement;
+                    img.onerror = null;
+                    img.src = '/svagency-removebg-preview.png';
+                  }}
+                />
               </div>
-              <span className="font-display text-xl font-bold tracking-tight">
-                <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="font-display text-xl font-bold tracking-tight whitespace-nowrap">
+                <span className="bg-gradient-to-r from-blue-400 to-blue-400 bg-clip-text text-transparent">
                   SV
                 </span>{" "}
                 <span className="text-white">Digital Studio</span>
               </span>
             </div>
           </a>
-
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((l) => (
@@ -91,7 +99,7 @@ const Navbar = () => {
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               <span className="relative flex items-center gap-2">
-              Book a Consultation
+                Book a Consultation
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </a>
@@ -109,9 +117,8 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${
-            mobileOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${mobileOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+            }`}
         >
           <div className="relative bg-background/95 backdrop-blur-xl border-b border-white/10 px-6 pb-6">
             <div className="relative pt-2 space-y-1">

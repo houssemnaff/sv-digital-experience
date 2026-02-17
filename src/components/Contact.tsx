@@ -128,7 +128,7 @@ const Contact = () => {
         {/* Social CTA */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
           <Button variant="ghost-light" size="lg" className="text-base px-8" asChild>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/sv.digitalstudio?igsh=NzNnejcwZWphcW9k" target="_blank" rel="noopener noreferrer">
               <Instagram className="mr-2" size={18} /> Follow Us on Instagram
             </a>
           </Button>

@@ -32,14 +32,14 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
 
-        {/* Badge — moved just above the headline, centered */}
-        <div className="flex justify-center mb-4 opacity-0 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-          <div className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5">
-            <span className="text-xs font-medium tracking-widest uppercase text-primary">
-              Digital Marketing & Creative Studio — Tunisia
-            </span>
-          </div>
-        </div>
+       {/* Badge — hidden on mobile, visible on desktop */}
+<div className="hidden sm:flex justify-center mb-4 opacity-100 sm:animate-fade-up" style={{ animationDelay: "0.1s" }}>
+  <div className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5">
+    <span className="text-xs font-medium tracking-widest uppercase text-primary">
+      Digital Marketing & Creative Studio — Tunisia
+    </span>
+  </div>
+</div>
 
         {/* Headline — reduced from 5xl→8xl to 3xl→6xl */}
         <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-8 opacity-0 animate-fade-up" style={{ animationDelay: "0.25s" }}>

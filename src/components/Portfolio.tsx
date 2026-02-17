@@ -57,21 +57,31 @@ const Portfolio = () => {
 
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full"
-            style={{
-              width: `${Math.random() * 3 + 1}px`,
-              height: `${Math.random() * 3 + 1}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              background: i % 3 === 0 ? 'rgba(139, 92, 246, 0.3)' : i % 3 === 1 ? 'rgba(59, 130, 246, 0.3)' : 'rgba(236, 72, 153, 0.3)',
-              animation: `float-particle ${8 + Math.random() * 12}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`
-            }}
-          />
-        ))}
+        {[...Array(20)].map((_, i) => {
+          const w = `${Math.random() * 3 + 1}px`;
+          const h = `${Math.random() * 3 + 1}px`;
+          const left = `${Math.random() * 100}%`;
+          const top = `${Math.random() * 100}%`;
+          const bg = i % 3 === 0 ? 'rgba(139, 92, 246, 0.3)' : i % 3 === 1 ? 'rgba(59, 130, 246, 0.3)' : 'rgba(236, 72, 153, 0.3)';
+          const duration = `${8 + Math.random() * 12}s`;
+          const delay = `${Math.random() * 5}s`;
+
+          return (
+            <div
+              key={i}
+              className={`absolute rounded-full animate-float-particle`}
+              style={{
+                width: w,
+                height: h,
+                left,
+                top,
+                background: bg,
+                animationDuration: duration,
+                animationDelay: delay,
+              }}
+            />
+          );
+        })}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -216,76 +226,8 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-20 text-center opacity-0 animate-fade-up" style={{ animationDelay: "0.95s" }}>
-          <div className="inline-flex flex-col items-center gap-6 p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-pink-500/10 border border-white/10 backdrop-blur-sm max-w-3xl">
-            <div className="flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10">
-              <Sparkles className="w-5 h-5 text-purple-400 animate-pulse" />
-              <span className="text-sm font-semibold text-gray-300">Have a project in mind?</span>
-            </div>
-            <h3 className="font-display text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-300 via-pink-300 to-blue-300 bg-clip-text text-transparent">
-              Let's Create Something Amazing
-            </h3>
-            <p className="text-gray-400 max-w-xl">
-              Every great project starts with a conversation. Share your vision and let's turn it into reality.
-            </p>
-            <button className="group mt-2 px-10 py-5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 hover:from-purple-600 hover:via-pink-600 hover:to-blue-600 font-bold text-lg transition-all duration-300 hover:scale-105 shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 relative overflow-hidden">
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-              <span className="relative flex items-center gap-2">
-                Start Your Project
-                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </span>
-            </button>
-            
-            {/* Trust indicators */}
-            <div className="flex items-center gap-8 mt-4 text-sm text-gray-400">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span>Free Consultation</span>
-              </div>
-              <div className="w-px h-4 bg-white/20" />
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-                <span>Fast Response</span>
-              </div>
-              <div className="w-px h-4 bg-white/20" />
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
-                <span>Flexible Pricing</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-
-      <style jsx>{`
-        @keyframes blob {
-          0%, 100% {
-            transform: translate(0, 0) scale(1);
-          }
-          33% {
-            transform: translate(40px, -60px) scale(1.15);
-          }
-          66% {
-            transform: translate(-30px, 30px) scale(0.9);
-          }
-        }
-
-        @keyframes float-particle {
-          0%, 100% { 
-            transform: translateY(0) translateX(0);
-            opacity: 0.2;
-          }
-          50% { 
-            transform: translateY(-100px) translateX(60px);
-            opacity: 0.6;
-          }
-        }
-
-        .animate-blob {
-          animation: blob 8s infinite;
-        }
-      `}</style>
+      {/* Animations moved to Tailwind config: use `animate-blob` and `animate-float-particle` classes */}
     </section>
   );
 };
