@@ -82,7 +82,7 @@ const Hero = () => {
             asChild
           >
             <a href="#contact">
-              Get a Quote 
+          Book a Consultation
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </a>
           </Button>

@@ -19,7 +19,7 @@ const Contact = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
           <Button variant="gold" size="lg" className="text-base px-8" asChild>
             <a href="mailto:contact@svdigitalstudio.com">
-              <Mail className="mr-2" size={18} /> Get a Quote <ArrowRight className="ml-1" size={18} />
+              <Mail className="mr-2" size={18} /> Book a Consultation <ArrowRight className="ml-1" size={18} />
             </a>
           </Button>
           <Button variant="ghost-light" size="lg" className="text-base px-8" asChild>

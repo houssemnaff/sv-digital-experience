@@ -91,7 +91,7 @@ const Navbar = () => {
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               <span className="relative flex items-center gap-2">
-                Get a Quote
+              Book a Consultation
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </span>
             </a>
@@ -135,7 +135,7 @@ const Navbar = () => {
                   className="group relative flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-base font-bold text-white transition-all duration-300 overflow-hidden shadow-lg shadow-purple-500/25"
                 >
                   <span className="relative flex items-center gap-2">
-                    Get a Quote
+                    Book a Consultation
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </a>
